@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		FFB81F712C330E0C009FFDA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F702C330E0C009FFDA4 /* AppDelegate.swift */; };
 		FFB81F732C330E0C009FFDA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F722C330E0C009FFDA4 /* SceneDelegate.swift */; };
-		FFB81F752C330E0C009FFDA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F742C330E0C009FFDA4 /* ViewController.swift */; };
 		FFB81F782C330E0C009FFDA4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FFB81F772C330E0C009FFDA4 /* Base */; };
 		FFB81F7A2C330E0D009FFDA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB81F792C330E0D009FFDA4 /* Assets.xcassets */; };
 		FFB81F7D2C330E0D009FFDA4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FFB81F7C2C330E0D009FFDA4 /* Base */; };
+		FFB81F8B2C3438DF009FFDA4 /* BookListCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F892C3438DF009FFDA4 /* BookListCellVC.swift */; };
+		FFB81F8C2C3438DF009FFDA4 /* BookListCellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB81F8A2C3438DF009FFDA4 /* BookListCellVC.xib */; };
+		FFB81F8E2C34396C009FFDA4 /* BookListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F8D2C34396C009FFDA4 /* BookListVC.swift */; };
+		FFB81F912C345848009FFDA4 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F902C345848009FFDA4 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FFB81F6D2C330E0C009FFDA4 /* book-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "book-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB81F702C330E0C009FFDA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB81F722C330E0C009FFDA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FFB81F742C330E0C009FFDA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FFB81F772C330E0C009FFDA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFB81F792C330E0D009FFDA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFB81F7C2C330E0D009FFDA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFB81F7E2C330E0D009FFDA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFB81F892C3438DF009FFDA4 /* BookListCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCellVC.swift; sourceTree = "<group>"; };
+		FFB81F8A2C3438DF009FFDA4 /* BookListCellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookListCellVC.xib; sourceTree = "<group>"; };
+		FFB81F8D2C34396C009FFDA4 /* BookListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListVC.swift; sourceTree = "<group>"; };
+		FFB81F902C345848009FFDA4 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		FFB81F6F2C330E0C009FFDA4 /* book-store */ = {
 			isa = PBXGroup;
 			children = (
+				FFB81F8F2C345839009FFDA4 /* Models */,
+				FFB81F862C3438A2009FFDA4 /* View */,
 				FFB81F702C330E0C009FFDA4 /* AppDelegate.swift */,
+				FFB81F852C3435FE009FFDA4 /* Storyboard */,
 				FFB81F722C330E0C009FFDA4 /* SceneDelegate.swift */,
-				FFB81F742C330E0C009FFDA4 /* ViewController.swift */,
-				FFB81F762C330E0C009FFDA4 /* Main.storyboard */,
 				FFB81F792C330E0D009FFDA4 /* Assets.xcassets */,
-				FFB81F7B2C330E0D009FFDA4 /* LaunchScreen.storyboard */,
 				FFB81F7E2C330E0D009FFDA4 /* Info.plist */,
 			);
 			path = "book-store";
+			sourceTree = "<group>";
+		};
+		FFB81F852C3435FE009FFDA4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FFB81F762C330E0C009FFDA4 /* Main.storyboard */,
+				FFB81F7B2C330E0D009FFDA4 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		FFB81F862C3438A2009FFDA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFB81F882C3438B6009FFDA4 /* Cell */,
+				FFB81F872C3438B0009FFDA4 /* Vc */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFB81F872C3438B0009FFDA4 /* Vc */ = {
+			isa = PBXGroup;
+			children = (
+				FFB81F8D2C34396C009FFDA4 /* BookListVC.swift */,
+			);
+			path = Vc;
+			sourceTree = "<group>";
+		};
+		FFB81F882C3438B6009FFDA4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FFB81F892C3438DF009FFDA4 /* BookListCellVC.swift */,
+				FFB81F8A2C3438DF009FFDA4 /* BookListCellVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FFB81F8F2C345839009FFDA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FFB81F902C345848009FFDA4 /* Book.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +177,7 @@
 				FFB81F7A2C330E0D009FFDA4 /* Assets.xcassets in Resources */,
 				FFB81F7D2C330E0D009FFDA4 /* Base in Resources */,
 				FFB81F782C330E0C009FFDA4 /* Base in Resources */,
+				FFB81F8C2C3438DF009FFDA4 /* BookListCellVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB81F752C330E0C009FFDA4 /* ViewController.swift in Sources */,
 				FFB81F712C330E0C009FFDA4 /* AppDelegate.swift in Sources */,
 				FFB81F732C330E0C009FFDA4 /* SceneDelegate.swift in Sources */,
+				FFB81F8B2C3438DF009FFDA4 /* BookListCellVC.swift in Sources */,
+				FFB81F912C345848009FFDA4 /* Book.swift in Sources */,
+				FFB81F8E2C34396C009FFDA4 /* BookListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
