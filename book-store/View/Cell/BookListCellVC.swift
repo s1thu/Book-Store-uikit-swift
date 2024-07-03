@@ -9,6 +9,10 @@ import UIKit
 
 class BookListCellVC: UITableViewCell {
     
+    @IBOutlet weak var bookName:UILabel!
+    @IBOutlet weak var bookPrice:UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +23,11 @@ class BookListCellVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func bindData(data:Book){
+        bookName.text = data.imageName
+        bookPrice.text = String(format: "%.2f", data.rating)
     }
     
 }

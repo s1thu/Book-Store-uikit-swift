@@ -37,21 +37,35 @@
                             <constraint firstAttribute="height" constant="1" id="dTz-Eu-REj"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIP-Tv-ymq">
+                        <rect key="frame" x="150" y="61" width="252" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ruu-JS-DkX" firstAttribute="top" secondItem="ZvY-eN-NhX" secondAttribute="bottom" constant="43" id="CV5-aT-Uov"/>
+                    <constraint firstItem="ruu-JS-DkX" firstAttribute="top" secondItem="XIP-Tv-ymq" secondAttribute="bottom" constant="10" id="HJu-gA-2us"/>
                     <constraint firstItem="Cuy-1s-qMH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="NZw-cE-Msp"/>
                     <constraint firstAttribute="trailing" secondItem="ruu-JS-DkX" secondAttribute="trailing" constant="30" id="T3X-A0-s8N"/>
                     <constraint firstItem="Cuy-1s-qMH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="W8i-Ix-AAl"/>
                     <constraint firstItem="ZvY-eN-NhX" firstAttribute="leading" secondItem="Cuy-1s-qMH" secondAttribute="trailing" constant="30" id="WGd-O1-4UL"/>
                     <constraint firstAttribute="bottom" secondItem="Cuy-1s-qMH" secondAttribute="bottom" constant="20" id="asn-qY-7pz"/>
+                    <constraint firstItem="XIP-Tv-ymq" firstAttribute="leading" secondItem="Cuy-1s-qMH" secondAttribute="trailing" constant="30" id="fhk-FC-NfD"/>
                     <constraint firstItem="ruu-JS-DkX" firstAttribute="leading" secondItem="Cuy-1s-qMH" secondAttribute="trailing" constant="30" id="irb-8W-eSr"/>
                     <constraint firstAttribute="bottom" secondItem="ruu-JS-DkX" secondAttribute="bottom" constant="30" id="sk0-sG-47s"/>
                     <constraint firstItem="ZvY-eN-NhX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="smS-i3-Aq6"/>
                     <constraint firstAttribute="trailing" secondItem="ZvY-eN-NhX" secondAttribute="trailing" constant="20" id="tRL-MM-h1v"/>
+                    <constraint firstAttribute="trailing" secondItem="XIP-Tv-ymq" secondAttribute="trailing" constant="30" id="y56-Wa-gtM"/>
+                    <constraint firstItem="XIP-Tv-ymq" firstAttribute="top" secondItem="ZvY-eN-NhX" secondAttribute="bottom" constant="10" id="zcC-jH-mvJ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bookName" destination="ZvY-eN-NhX" id="FAN-rX-7c4"/>
+                <outlet property="bookPrice" destination="XIP-Tv-ymq" id="PYG-Vd-8s6"/>
+            </connections>
             <point key="canvasLocation" x="200" y="-69.718309859154928"/>
         </tableViewCell>
     </objects>

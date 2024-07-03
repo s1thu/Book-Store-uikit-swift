@@ -16,6 +16,9 @@
 		FFB81F8C2C3438DF009FFDA4 /* BookListCellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB81F8A2C3438DF009FFDA4 /* BookListCellVC.xib */; };
 		FFB81F8E2C34396C009FFDA4 /* BookListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F8D2C34396C009FFDA4 /* BookListVC.swift */; };
 		FFB81F912C345848009FFDA4 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F902C345848009FFDA4 /* Book.swift */; };
+		FFB81F952C346F5D009FFDA4 /* BookDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F942C346F5D009FFDA4 /* BookDetailVC.swift */; };
+		FFB81F972C35A1AB009FFDA4 /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F962C35A1AB009FFDA4 /* VC.swift */; };
+		FFB81F9B2C35A587009FFDA4 /* RootNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F9A2C35A587009FFDA4 /* RootNC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		FFB81F8A2C3438DF009FFDA4 /* BookListCellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookListCellVC.xib; sourceTree = "<group>"; };
 		FFB81F8D2C34396C009FFDA4 /* BookListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListVC.swift; sourceTree = "<group>"; };
 		FFB81F902C345848009FFDA4 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		FFB81F942C346F5D009FFDA4 /* BookDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailVC.swift; sourceTree = "<group>"; };
+		FFB81F962C35A1AB009FFDA4 /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
+		FFB81F9A2C35A587009FFDA4 /* RootNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		FFB81F6F2C330E0C009FFDA4 /* book-store */ = {
 			isa = PBXGroup;
 			children = (
+				FFB81F992C35A56A009FFDA4 /* navigation */,
 				FFB81F8F2C345839009FFDA4 /* Models */,
 				FFB81F862C3438A2009FFDA4 /* View */,
 				FFB81F702C330E0C009FFDA4 /* AppDelegate.swift */,
@@ -94,7 +101,9 @@
 		FFB81F872C3438B0009FFDA4 /* Vc */ = {
 			isa = PBXGroup;
 			children = (
-				FFB81F8D2C34396C009FFDA4 /* BookListVC.swift */,
+				FFB81F932C346F45009FFDA4 /* BookDetail */,
+				FFB81F922C346F3A009FFDA4 /* BookList */,
+				FFB81F962C35A1AB009FFDA4 /* VC.swift */,
 			);
 			path = Vc;
 			sourceTree = "<group>";
@@ -114,6 +123,30 @@
 				FFB81F902C345848009FFDA4 /* Book.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FFB81F922C346F3A009FFDA4 /* BookList */ = {
+			isa = PBXGroup;
+			children = (
+				FFB81F8D2C34396C009FFDA4 /* BookListVC.swift */,
+			);
+			path = BookList;
+			sourceTree = "<group>";
+		};
+		FFB81F932C346F45009FFDA4 /* BookDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FFB81F942C346F5D009FFDA4 /* BookDetailVC.swift */,
+			);
+			path = BookDetail;
+			sourceTree = "<group>";
+		};
+		FFB81F992C35A56A009FFDA4 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				FFB81F9A2C35A587009FFDA4 /* RootNC.swift */,
+			);
+			path = navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,9 +223,12 @@
 			files = (
 				FFB81F712C330E0C009FFDA4 /* AppDelegate.swift in Sources */,
 				FFB81F732C330E0C009FFDA4 /* SceneDelegate.swift in Sources */,
+				FFB81F952C346F5D009FFDA4 /* BookDetailVC.swift in Sources */,
 				FFB81F8B2C3438DF009FFDA4 /* BookListCellVC.swift in Sources */,
+				FFB81F9B2C35A587009FFDA4 /* RootNC.swift in Sources */,
 				FFB81F912C345848009FFDA4 /* Book.swift in Sources */,
 				FFB81F8E2C34396C009FFDA4 /* BookListVC.swift in Sources */,
+				FFB81F972C35A1AB009FFDA4 /* VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
