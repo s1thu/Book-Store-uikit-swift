@@ -24,14 +24,13 @@ class BookDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        bind()
+       setupViews()
     }
     
 
     //Initial Setup Views
     private func setupViews(){
-        
+        bind()
     }
     
     //Initial Bindings
@@ -39,14 +38,37 @@ class BookDetailVC: UIViewController {
         
     }
     
-    func bindData(data:Book?){
-        if let data = data{
-            self.data = data
-        }
-    }
     
     func bind(){
-        lblFirstName.text = data?.authorFirstName
+        if let book = data {
+            imgBookCover.image = UIImage(named: book.imageName)
+            lblFirstName.text = book.authorFirstName
+            lblLastName.text = book.authorLastName
+            lblRating.text = String(format: "%.1f", book.rating)
+            
+            let filledStarImage = UIImage(named: "star-filled")
+            let halfStarImage = UIImage(named: "star-half")
+            
+            let ratingImages = [rating1,rating2,rating3,rating4]
+            
+            // Determine the number of full and half stars
+           let fullStars = Int(book.rating)
+           let hasHalfStar = book.rating.truncatingRemainder(dividingBy: 1) != 0
+           
+           // Set full stars
+           for i in 0..<fullStars {
+               ratingImages[i]?.image = filledStarImage
+           }
+           
+           // Set half star if applicable
+           if hasHalfStar {
+               ratingImages[fullStars]?.image = halfStarImage
+           }
+            
+            
+            lblAboutAuthor.text = book.aboutTheAuthor
+            lblOverview.text = book.aboutTheAuthor
+        }
     }
 
 }

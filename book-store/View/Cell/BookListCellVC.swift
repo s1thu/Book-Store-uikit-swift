@@ -9,6 +9,7 @@ import UIKit
 
 class BookListCellVC: UITableViewCell {
     
+    @IBOutlet weak var bookCover:UIImageView!
     @IBOutlet weak var bookName:UILabel!
     @IBOutlet weak var bookPrice:UILabel!
     
@@ -26,6 +27,7 @@ class BookListCellVC: UITableViewCell {
     }
     
     func bindData(data:Book){
+        bookCover.image = UIImage(named: data.imageName)
         bookName.text = data.imageName
         bookPrice.text = String(format: "%.2f", data.rating)
     }

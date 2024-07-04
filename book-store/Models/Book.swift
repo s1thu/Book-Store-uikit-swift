@@ -16,29 +16,9 @@ struct Book {
     var overview: String
     
     static func getDummyBooks() -> [Book]{
-        books
+        [
+            .init(imageName: "Jujutsu Kaisen", authorFirstName: "Gege", authorLastName: "Hauki", rating: 3.5 ,aboutTheAuthor: "Jujutsu Kaisen is a Japanese manga series written and illustrated by Gege Akutami. It has been serialized in Shueisha's shōnen manga magazine Weekly Shōnen Jump since March 2018, with its chapters collected in 25 tankōbon volumes as of January 2024.", overview: "Jujutsu Kaisen is a Japanese manga series written and illustrated by Gege Akutami. It has been serialized in Shueisha's shōnen manga magazine Weekly Shōnen Jump since March 2018, with its chapters collected in 25 tankōbon volumes as of January 2024. ")
+        ]
     }
 }
 
-let books = [
-    Book(imageName: "book-cover-one",
-         authorFirstName: "Alice",
-         authorLastName: "Johnson",
-         rating: 4.5,
-         aboutTheAuthor: "Alice Johnson is an award-winning author known for her compelling narratives and memorable characters.",
-         overview: "An epic tale of adventure and discovery that explores the depths of human resilience."),
-    
-    Book(imageName: "book-cover-two",
-         authorFirstName: "Bob",
-         authorLastName: "Smith",
-         rating: 4.0,
-         aboutTheAuthor: "Bob Smith has captivated readers worldwide with his unique storytelling and rich historical settings.",
-         overview: "A gripping historical fiction that brings to life a pivotal moment in history through the eyes of its unsung heroes."),
-    
-    Book(imageName: "book-cover-three",
-         authorFirstName: "Carol",
-         authorLastName: "Davis",
-         rating: 4.8,
-         aboutTheAuthor: "Carol Davis is a celebrated novelist whose works explore the intricacies of human relationships and the beauty of the everyday.",
-         overview: "A heartwarming story of love, loss, and the power of friendship that challenges the way we see the world around us.")
-]

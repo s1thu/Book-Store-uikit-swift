@@ -53,6 +53,6 @@ extension BookListVC:UITableViewDelegate{
         let vc = storyboard.instantiateViewController(withIdentifier: "BookDetailVC") as? BookDetailVC
         guard let vc = vc else { return  }
         navigationController?.pushViewController(vc, animated: true)
-        vc.bindData(data: books[indexPath.row])
+        vc.data = books[indexPath.row]
     }
 }
