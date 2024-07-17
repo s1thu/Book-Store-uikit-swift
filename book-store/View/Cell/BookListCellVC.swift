@@ -7,17 +7,26 @@
 
 import UIKit
 
+protocol BookListCellDelegate{
+    func onChangeBookmark(data:Bool)
+}
+
 class BookListCellVC: UITableViewCell {
     
     @IBOutlet weak var bookCover:UIImageView!
     @IBOutlet weak var bookName:UILabel!
     @IBOutlet weak var bookPrice:UILabel!
+    @IBOutlet weak var bookMark:UIImageView!
+    @IBOutlet weak var btnBookMark:UIButton!
     
+    var delegate:BookListCellDelegate? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         selectionStyle = .none
+        
+        btnBookMark.addTarget(self, action: #selector(onChangeBookMark), for: .touchUpInside)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,5 +40,10 @@ class BookListCellVC: UITableViewCell {
         bookName.text = data.imageName
         bookPrice.text = String(format: "%.2f", data.rating)
     }
+    
+    @objc func onChangeBookMark(){
+        delegate?.onChangeBookmark(data: true)
+    }
+    
     
 }

@@ -41,6 +41,7 @@ extension BookListVC:UITableViewDataSource{
         let cell = booklistTb.dequeueReusableCell(withIdentifier: "BookListCellVC", for: indexPath) as? BookListCellVC
         guard let cell = cell else { return UITableViewCell() }
         cell.bindData(data: books[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
@@ -55,4 +56,12 @@ extension BookListVC:UITableViewDelegate{
         navigationController?.pushViewController(vc, animated: true)
         vc.data = books[indexPath.row]
     }
+}
+
+extension BookListVC:BookListCellDelegate{
+    func onChangeBookmark(data: Bool) {
+        print(data)
+    }
+    
+    
 }
