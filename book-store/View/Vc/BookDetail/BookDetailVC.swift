@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol BookDetailDelegate{
+    func onChangeBookmarkDetail(data:Book)
+}
+
 class BookDetailVC: UIViewController {
     
     @IBOutlet weak var imgBookCover:UIImageView!
@@ -19,12 +23,15 @@ class BookDetailVC: UIViewController {
     @IBOutlet weak var lblRating:UILabel!
     @IBOutlet weak var lblAboutAuthor:UILabel!
     @IBOutlet weak var lblOverview:UILabel!
+    @IBOutlet weak var btnBookmark:UIButton!
+    @IBOutlet weak var btnBack:UIButton!
     
     var data:Book? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       setupViews()
+        setupViews()
+        setupBindings()
     }
     
 
@@ -35,7 +42,8 @@ class BookDetailVC: UIViewController {
     
     //Initial Bindings
     private func setupBindings(){
-        
+        btnBack.addTarget(self, action: #selector(goBackToHome), for: .touchUpInside)
+        btnBookmark.addTarget(self, action: #selector(onChangeBookmarkDetail), for: .touchUpInside)
     }
     
     
@@ -68,7 +76,23 @@ class BookDetailVC: UIViewController {
             
             lblAboutAuthor.text = book.aboutTheAuthor
             lblOverview.text = book.aboutTheAuthor
+            
+            if book.isBookMark{
+                btnBookmark.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+            }else{
+                btnBookmark.setImage(UIImage(systemName: "bookmark"), for: .normal)
+            }
         }
     }
+    
+    @objc func goBackToHome(){
+        navigationController?.popViewController(animated: true)
+    }
 
+    @objc func onChangeBookmarkDetail(){
+        if let book = data {
+            book.isBookMark.toggle()
+            bind()
+        }
+    }
 }

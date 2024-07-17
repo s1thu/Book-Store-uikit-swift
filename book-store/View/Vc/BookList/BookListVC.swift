@@ -40,7 +40,7 @@ extension BookListVC:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = booklistTb.dequeueReusableCell(withIdentifier: "BookListCellVC", for: indexPath) as? BookListCellVC
         guard let cell = cell else { return UITableViewCell() }
-        cell.bindData(data: books[indexPath.row])
+        cell.book = books[indexPath.row]
         cell.delegate = self
         return cell
     }
@@ -59,8 +59,11 @@ extension BookListVC:UITableViewDelegate{
 }
 
 extension BookListVC:BookListCellDelegate{
-    func onChangeBookmark(data: Bool) {
-        print(data)
+    func onChangeBookmark(data: Book) {
+        print("Before \(data.isBookMark)")
+        books.first{$0.bookId == data.bookId}?.isBookMark.toggle()
+        print("After \(data.isBookMark)")
+        booklistTb.reloadData()
     }
     
     

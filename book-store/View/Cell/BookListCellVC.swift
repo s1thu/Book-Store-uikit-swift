@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BookListCellDelegate{
-    func onChangeBookmark(data:Bool)
+    func onChangeBookmark(data:Book)
 }
 
 class BookListCellVC: UITableViewCell {
@@ -20,6 +20,23 @@ class BookListCellVC: UITableViewCell {
     @IBOutlet weak var btnBookMark:UIButton!
     
     var delegate:BookListCellDelegate? = nil
+    
+    var book:Book? = nil {
+        didSet{
+            if let data = book {
+                bookCover.image = UIImage(named: data.imageName)
+                bookName.text = data.imageName
+                bookPrice.text = String(format: "%.2f", data.rating)
+                
+                if(data.isBookMark){
+                    bookMark.image = UIImage(named: "bookmark-fill")
+                }else{
+                    bookMark.image = UIImage(named: "bookmark-empty")
+                }
+            }
+            
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,14 +52,10 @@ class BookListCellVC: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func bindData(data:Book){
-        bookCover.image = UIImage(named: data.imageName)
-        bookName.text = data.imageName
-        bookPrice.text = String(format: "%.2f", data.rating)
-    }
-    
     @objc func onChangeBookMark(){
-        delegate?.onChangeBookmark(data: true)
+        if let data = book {
+            delegate?.onChangeBookmark(data: data)
+        }
     }
     
     
