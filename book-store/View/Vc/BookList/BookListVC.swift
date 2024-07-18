@@ -11,11 +11,22 @@ class BookListVC: UIViewController {
 
     @IBOutlet weak var booklistTb:UITableView!
     
-    let books:[Book] = Book.getDummyBooks()
+    var books:[Book] = []
+    
+//    let datasource = BookstoreDataSource.shared
+    
+    let repository = BookRepository.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        books = datasource.getAll()
+        books = repository.getBookList()
         setupViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        booklistTb.reloadData()
     }
     
     func setupViews(){
@@ -40,7 +51,8 @@ extension BookListVC:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = booklistTb.dequeueReusableCell(withIdentifier: "BookListCellVC", for: indexPath) as? BookListCellVC
         guard let cell = cell else { return UITableViewCell() }
-        cell.book = books[indexPath.row]
+//        cell.book = datasource.getBookById(bookId: books[indexPath.row].bookId)
+        cell.book = repository.getBookById(bookId: books[indexPath.row].bookId)
         cell.delegate = self
         return cell
     }
@@ -54,15 +66,13 @@ extension BookListVC:UITableViewDelegate{
         let vc = storyboard.instantiateViewController(withIdentifier: "BookDetailVC") as? BookDetailVC
         guard let vc = vc else { return  }
         navigationController?.pushViewController(vc, animated: true)
-        vc.data = books[indexPath.row]
+        vc.data = repository.getBookById(bookId: books[indexPath.row].bookId)
     }
 }
 
 extension BookListVC:BookListCellDelegate{
     func onChangeBookmark(data: Book) {
-        print("Before \(data.isBookMark)")
-        books.first{$0.bookId == data.bookId}?.isBookMark.toggle()
-        print("After \(data.isBookMark)")
+        repository.addOrRemoveBookmark(bookId: data.bookId)
         booklistTb.reloadData()
     }
     

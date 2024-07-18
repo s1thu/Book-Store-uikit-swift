@@ -28,6 +28,8 @@ class BookDetailVC: UIViewController {
     
     var data:Book? = nil
     
+    let bookRepository = BookRepository.init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -91,7 +93,7 @@ class BookDetailVC: UIViewController {
 
     @objc func onChangeBookmarkDetail(){
         if let book = data {
-            book.isBookMark.toggle()
+            bookRepository.addOrRemoveBookmark(bookId: book.bookId)
             bind()
         }
     }
