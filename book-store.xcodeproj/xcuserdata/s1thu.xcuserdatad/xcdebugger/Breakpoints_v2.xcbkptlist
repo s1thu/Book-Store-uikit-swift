@@ -14,10 +14,26 @@
             filePath = "book-store/View/Vc/BookList/BookListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82FCED58-B174-4F2A-B98A-6145C3E9CE36"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "book-store/View/Vc/BookList/BookListVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "BookListVM"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

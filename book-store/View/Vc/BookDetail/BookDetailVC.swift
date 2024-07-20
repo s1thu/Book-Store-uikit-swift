@@ -26,16 +26,16 @@ class BookDetailVC: UIViewController {
     @IBOutlet weak var btnBookmark:UIButton!
     @IBOutlet weak var btnBack:UIButton!
     
-    var data:Book? = nil
+    lazy var bookDetailVM = BookDetailVM(delegate: self)
     
-    let bookRepository = BookRepository.init()
+    var bookId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setupBindings()
+        bookDetailVM.getBookbyBookId(Bookid: bookId!)
     }
-    
 
     //Initial Setup Views
     private func setupViews(){
@@ -50,7 +50,7 @@ class BookDetailVC: UIViewController {
     
     
     func bind(){
-        if let book = data {
+        if let book = bookDetailVM.data {
             imgBookCover.image = UIImage(named: book.imageName)
             lblFirstName.text = book.authorFirstName
             lblLastName.text = book.authorLastName
@@ -92,9 +92,17 @@ class BookDetailVC: UIViewController {
     }
 
     @objc func onChangeBookmarkDetail(){
-        if let book = data {
-            bookRepository.addOrRemoveBookmark(bookId: book.bookId)
+        if let book = bookDetailVM.data {
+            bookDetailVM.onChangeBookmark()
             bind()
         }
     }
+}
+
+extension BookDetailVC:BookDetailVMDelegate{
+    func onGetByBookId() {
+        bind()
+    }
+    
+    
 }

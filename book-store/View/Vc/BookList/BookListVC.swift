@@ -11,16 +11,11 @@ class BookListVC: UIViewController {
 
     @IBOutlet weak var booklistTb:UITableView!
     
-    var books:[Book] = []
-    
-//    let datasource = BookstoreDataSource.shared
-    
-    let repository = BookRepository.init()
+    lazy var bookVm:BookListVM = BookListVM(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        books = datasource.getAll()
-        books = repository.getBookList()
+        bookVm.fetchBooks()
         setupViews()
     }
     
@@ -45,14 +40,13 @@ class BookListVC: UIViewController {
 
 extension BookListVC:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books.count
+        return bookVm.books.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = booklistTb.dequeueReusableCell(withIdentifier: "BookListCellVC", for: indexPath) as? BookListCellVC
         guard let cell = cell else { return UITableViewCell() }
-//        cell.book = datasource.getBookById(bookId: books[indexPath.row].bookId)
-        cell.book = repository.getBookById(bookId: books[indexPath.row].bookId)
+        cell.book = bookVm.books[indexPath.row]
         cell.delegate = self
         return cell
     }
@@ -66,13 +60,20 @@ extension BookListVC:UITableViewDelegate{
         let vc = storyboard.instantiateViewController(withIdentifier: "BookDetailVC") as? BookDetailVC
         guard let vc = vc else { return  }
         navigationController?.pushViewController(vc, animated: true)
-        vc.data = repository.getBookById(bookId: books[indexPath.row].bookId)
+        vc.bookId = bookVm.books[indexPath.row].bookId
     }
 }
 
 extension BookListVC:BookListCellDelegate{
     func onChangeBookmark(data: Book) {
-        repository.addOrRemoveBookmark(bookId: data.bookId)
+        bookVm.onChangeBookmark(bookId: data.bookId)
+    }
+    
+    
+}
+
+extension BookListVC:BookListVMDelegate{
+    func onGetBooks() {
         booklistTb.reloadData()
     }
     

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FF63D8C42C482041008238A5 /* BookstoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF63D8C32C482041008238A5 /* BookstoreDataSource.swift */; };
 		FF63D8C72C496A91008238A5 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF63D8C62C496A91008238A5 /* BookRepository.swift */; };
+		FF63D8C92C4BE338008238A5 /* BookListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF63D8C82C4BE338008238A5 /* BookListVM.swift */; };
+		FF63D8CB2C4BE87F008238A5 /* BookDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF63D8CA2C4BE87F008238A5 /* BookDetailVM.swift */; };
 		FFB81F712C330E0C009FFDA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F702C330E0C009FFDA4 /* AppDelegate.swift */; };
 		FFB81F732C330E0C009FFDA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F722C330E0C009FFDA4 /* SceneDelegate.swift */; };
 		FFB81F782C330E0C009FFDA4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FFB81F772C330E0C009FFDA4 /* Base */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		FF63D8C32C482041008238A5 /* BookstoreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreDataSource.swift; sourceTree = "<group>"; };
 		FF63D8C62C496A91008238A5 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
+		FF63D8C82C4BE338008238A5 /* BookListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListVM.swift; sourceTree = "<group>"; };
+		FF63D8CA2C4BE87F008238A5 /* BookDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailVM.swift; sourceTree = "<group>"; };
 		FFB81F6D2C330E0C009FFDA4 /* book-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "book-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB81F702C330E0C009FFDA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB81F722C330E0C009FFDA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB81F8D2C34396C009FFDA4 /* BookListVC.swift */,
+				FF63D8C82C4BE338008238A5 /* BookListVM.swift */,
 			);
 			path = BookList;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB81F942C346F5D009FFDA4 /* BookDetailVC.swift */,
+				FF63D8CA2C4BE87F008238A5 /* BookDetailVM.swift */,
 			);
 			path = BookDetail;
 			sourceTree = "<group>";
@@ -252,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFB81F712C330E0C009FFDA4 /* AppDelegate.swift in Sources */,
+				FF63D8C92C4BE338008238A5 /* BookListVM.swift in Sources */,
 				FFB81F732C330E0C009FFDA4 /* SceneDelegate.swift in Sources */,
 				FF63D8C72C496A91008238A5 /* BookRepository.swift in Sources */,
 				FFB81F952C346F5D009FFDA4 /* BookDetailVC.swift in Sources */,
@@ -260,6 +267,7 @@
 				FFB81F9B2C35A587009FFDA4 /* RootNC.swift in Sources */,
 				FFB81F912C345848009FFDA4 /* Book.swift in Sources */,
 				FFB81F8E2C34396C009FFDA4 /* BookListVC.swift in Sources */,
+				FF63D8CB2C4BE87F008238A5 /* BookDetailVM.swift in Sources */,
 				FFB81F972C35A1AB009FFDA4 /* VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
