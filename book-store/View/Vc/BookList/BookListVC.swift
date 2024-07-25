@@ -11,12 +11,15 @@ class BookListVC: UIViewController {
 
     @IBOutlet weak var booklistTb:UITableView!
     
+    @IBOutlet weak var btnBookmarkListView:UIButton!
+    
     lazy var bookVm:BookListVM = BookListVM(delegate: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bookVm.fetchBooks()
         setupViews()
+        setupBindings()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,7 +36,14 @@ class BookListVC: UIViewController {
     }
     
     func setupBindings(){
-        
+        btnBookmarkListView.addTarget(self, action: #selector(navigateToBookmarkedList), for: .touchUpInside)
+    }
+    
+    @objc func navigateToBookmarkedList(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "BookmarkedListVC") as? BookmarkedListVC
+        guard let vc = vc else { return  }
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }

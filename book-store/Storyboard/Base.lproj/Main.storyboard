@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PxR-qS-3MH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -54,22 +54,30 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nZ-Vm-Acp">
-                                        <rect key="frame" x="15" y="46" width="363" height="40.666666666666657"/>
+                                        <rect key="frame" x="15" y="46" width="166.33333333333334" height="40.666666666666657"/>
                                         <string key="text">What do you want to
 read today?</string>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw8-PW-vNk">
+                                        <rect key="frame" x="331.33333333333331" y="30.999999999999996" width="61.666666666666686" height="55.666666666666657"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="bookmark.fill" catalog="system"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="2nZ-Vm-Acp" secondAttribute="bottom" id="2B3-e4-mve"/>
+                                    <constraint firstItem="bw8-PW-vNk" firstAttribute="leading" secondItem="2nZ-Vm-Acp" secondAttribute="trailing" constant="150" id="IFm-x6-ftr"/>
+                                    <constraint firstAttribute="trailing" secondItem="bw8-PW-vNk" secondAttribute="trailing" id="M7g-9I-uXD"/>
                                     <constraint firstItem="2nZ-Vm-Acp" firstAttribute="top" secondItem="bxN-EO-rQB" secondAttribute="bottom" constant="15" id="RIg-e8-TI4"/>
+                                    <constraint firstItem="bw8-PW-vNk" firstAttribute="top" secondItem="bxN-EO-rQB" secondAttribute="bottom" id="Vmf-re-kUp"/>
                                     <constraint firstItem="bxN-EO-rQB" firstAttribute="leading" secondItem="vXn-Jn-Dlg" secondAttribute="leading" constant="15" id="d1u-eJ-iT2"/>
+                                    <constraint firstAttribute="bottom" secondItem="bw8-PW-vNk" secondAttribute="bottom" id="dUe-gl-FLj"/>
                                     <constraint firstItem="2nZ-Vm-Acp" firstAttribute="leading" secondItem="bxN-EO-rQB" secondAttribute="leading" id="ddO-9X-t5y"/>
                                     <constraint firstItem="bxN-EO-rQB" firstAttribute="top" secondItem="vXn-Jn-Dlg" secondAttribute="top" constant="10" id="gfm-0A-6XR"/>
-                                    <constraint firstItem="2nZ-Vm-Acp" firstAttribute="trailing" secondItem="bxN-EO-rQB" secondAttribute="trailing" id="tjg-dQ-gxT"/>
                                     <constraint firstAttribute="trailing" secondItem="bxN-EO-rQB" secondAttribute="trailing" constant="15" id="zEe-lr-7on"/>
                                 </constraints>
                             </view>
@@ -93,6 +101,7 @@ read today?</string>
                     <navigationItem key="navigationItem" id="06e-55-A0E"/>
                     <connections>
                         <outlet property="booklistTb" destination="bsK-ob-Fjo" id="5hp-gc-ZNo"/>
+                        <outlet property="btnBookmarkListView" destination="bw8-PW-vNk" id="C5Q-N9-r9S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -370,6 +379,43 @@ read today?</string>
             </objects>
             <point key="canvasLocation" x="3993.129770992366" y="-26.056338028169016"/>
         </scene>
+        <!--Bookmarked ListVC-->
+        <scene sceneID="osV-yx-VOq">
+            <objects>
+                <viewController storyboardIdentifier="BookmarkedListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WgB-hO-kvC" customClass="BookmarkedListVC" customModule="book_store" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rJa-R9-OFJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jem-ze-1V4">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="R1B-ga-maX">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TEB-Z3-pY7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jem-ze-1V4" firstAttribute="top" secondItem="TEB-Z3-pY7" secondAttribute="top" id="1OE-AU-HKU"/>
+                            <constraint firstAttribute="bottom" secondItem="Jem-ze-1V4" secondAttribute="bottom" id="5je-h6-Uyh"/>
+                            <constraint firstItem="Jem-ze-1V4" firstAttribute="leading" secondItem="TEB-Z3-pY7" secondAttribute="leading" id="W2t-eT-XDy"/>
+                            <constraint firstItem="Jem-ze-1V4" firstAttribute="trailing" secondItem="TEB-Z3-pY7" secondAttribute="trailing" id="v8W-MH-fo6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cvBookmarkedList" destination="Jem-ze-1V4" id="gHg-fU-AgQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sjE-bz-qOd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5040.4580152671751" y="-26.056338028169016"/>
+        </scene>
         <!--RootNC-->
         <scene sceneID="a0g-E5-95e">
             <objects>
@@ -391,6 +437,7 @@ read today?</string>
     <resources>
         <image name="arrowshape.backward.fill" catalog="system" width="128" height="104"/>
         <image name="bookmark" catalog="system" width="110" height="128"/>
+        <image name="bookmark.fill" catalog="system" width="110" height="128"/>
         <image name="star-rate-rating-outline-svgrepo-com" width="800" height="800"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
