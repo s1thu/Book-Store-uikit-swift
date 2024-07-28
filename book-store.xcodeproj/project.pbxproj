@@ -14,6 +14,7 @@
 		FF63D8D02C4BF416008238A5 /* BookmarkedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF63D8CF2C4BF416008238A5 /* BookmarkedCell.xib */; };
 		FF63D8D12C4BF416008238A5 /* BookmarkedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF63D8CE2C4BF416008238A5 /* BookmarkedCell.swift */; };
 		FF9A1C242C52A48A00015A37 /* BookmarkedListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A1C232C52A48A00015A37 /* BookmarkedListVC.swift */; };
+		FF9A1C262C53E18600015A37 /* BookmarkedListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9A1C252C53E18600015A37 /* BookmarkedListVM.swift */; };
 		FFB81F712C330E0C009FFDA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F702C330E0C009FFDA4 /* AppDelegate.swift */; };
 		FFB81F732C330E0C009FFDA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB81F722C330E0C009FFDA4 /* SceneDelegate.swift */; };
 		FFB81F782C330E0C009FFDA4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FFB81F772C330E0C009FFDA4 /* Base */; };
@@ -36,6 +37,7 @@
 		FF63D8CE2C4BF416008238A5 /* BookmarkedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedCell.swift; sourceTree = "<group>"; };
 		FF63D8CF2C4BF416008238A5 /* BookmarkedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkedCell.xib; sourceTree = "<group>"; };
 		FF9A1C232C52A48A00015A37 /* BookmarkedListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedListVC.swift; sourceTree = "<group>"; };
+		FF9A1C252C53E18600015A37 /* BookmarkedListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedListVM.swift; sourceTree = "<group>"; };
 		FFB81F6D2C330E0C009FFDA4 /* book-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "book-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB81F702C330E0C009FFDA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB81F722C330E0C009FFDA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				FF9A1C232C52A48A00015A37 /* BookmarkedListVC.swift */,
+				FF9A1C252C53E18600015A37 /* BookmarkedListVM.swift */,
 			);
 			path = BookmarkedList;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				FFB81F952C346F5D009FFDA4 /* BookDetailVC.swift in Sources */,
 				FFB81F8B2C3438DF009FFDA4 /* BookListCellVC.swift in Sources */,
 				FF63D8C42C482041008238A5 /* BookstoreDataSource.swift in Sources */,
+				FF9A1C262C53E18600015A37 /* BookmarkedListVM.swift in Sources */,
 				FF9A1C242C52A48A00015A37 /* BookmarkedListVC.swift in Sources */,
 				FFB81F9B2C35A587009FFDA4 /* RootNC.swift in Sources */,
 				FF63D8D12C4BF416008238A5 /* BookmarkedCell.swift in Sources */,

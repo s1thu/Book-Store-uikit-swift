@@ -21,5 +21,9 @@ class BookRepository{
     func getBookById(bookId:Int) -> Book?{
         datasource.getBookById(bookId: bookId)
     }
+    
+    func getBookmarkedBooks() -> [Book]{
+        datasource.getBookmarkedBooks()
+    }
         
 }

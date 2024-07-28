@@ -61,7 +61,6 @@ extension BookListVC:UITableViewDataSource{
         return cell
     }
     
-    
 }
 
 extension BookListVC:UITableViewDelegate{
@@ -78,14 +77,10 @@ extension BookListVC:BookListCellDelegate{
     func onChangeBookmark(data: Book) {
         bookVm.onChangeBookmark(bookId: data.bookId)
     }
-    
-    
 }
 
 extension BookListVC:BookListVMDelegate{
     func onGetBooks() {
         booklistTb.reloadData()
     }
-    
-    
 }

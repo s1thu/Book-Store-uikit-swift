@@ -26,4 +26,8 @@ class BookstoreDataSource{
     func getBookById(bookId: Int) -> Book? {
         bookList.first{$0.bookId == bookId}
     }
+    
+    func getBookmarkedBooks() -> [Book]{
+        bookList.filter{$0.isBookMark}
+    }
 }
